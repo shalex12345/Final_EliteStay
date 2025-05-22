@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #5C6B73;
+  --color-secondary: #253237;
+}
+
+* {
+  font-family: "DM Sans", sans-serif;
+ 
+}
+
+.font-cal {
+  font-family: "Cal Sans", sans-serif !important;
+}
+
