@@ -21,7 +21,7 @@ const Testimonial = () => {
                             {/* {Array(5).fill(0).map((_, index) => (
                                 <Star key={index} filled={testimonial.rating > index} />
                             ))} */}
-                            <StarRating/>
+                            <StarRating rating={testimonial.rating} />
                         </div>
                         <p className="text-gray-500 max-w-90 mt-4">"{testimonial.review}"</p>
                     </div>
