@@ -1,4 +1,4 @@
-import express from "express"
+import express, { application } from "express"
 import "dotenv/config"
 import cors from "cors"
 import connectDB from "./configs/db.js"
@@ -9,6 +9,7 @@ import hotelRouter from "./routes/hotelRoute.js"
 import connectCloudinary from "./configs/cloudinary.js"
 import roomRouter from "./routes/roomRoute.js"
 import bookingRouter from "./routes/bookingRoutes.js"
+import { stripeWebhooks } from "./controllers/stripeWebhooks.js"
 
 
 connectDB()
@@ -16,6 +17,9 @@ connectCloudinary()
 
 const app = express()
 app.use(cors()) //Enable Cross-Origin Sharing
+
+// API to listen to Stripe Webhooks
+app.post('/api/stripe', express.raw({type:"application/json"}), stripeWebhooks)
 
 // Middleware
 app.use(express.json())
