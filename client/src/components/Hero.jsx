@@ -25,10 +25,10 @@ const Hero = () => {
     }
 
     return (
-        <div className='flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url("/src/assets/heroImage.png")] bg-no-repeat bg-cover bg-center h-screen'>
+        <div className=' flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url("/src/assets/heroImage.png")] bg-no-repeat bg-cover bg-center h-screen'>
             <p className='bg-[#E0FBFC] px-3.5 py-1 rounded-full mt-20 text-black'>Where Booking Meets Elegance</p>
-            <h1 className='font-playfair text-2xl md:text-5xl md:text-[54px] md-leading-[56px] font-bold md:font-extrabold max-w-xl mt-4'>Book the Escape You've Been Dreaming Of</h1>
-            <p className='max-w-130 mt-2 text-sm md:text-base'>Elite offers seamless luxury hotel bookings with personalized recommendations, exclusive stays, and a commitment to exceptional comfort and service.</p>
+            <h1 className='text-center font-playfair text-2xl md:text-5xl md:text-[54px] md-leading-[56px] font-bold md:font-extrabold max-w-xl mt-4'>Book the Escape You've Been Dreaming Of</h1>
+            <p className='text-center max-w-130 mt-2 text-sm md:text-base'>Elite offers seamless luxury hotel bookings with personalized recommendations, exclusive stays, and a commitment to exceptional comfort and service.</p>
 
             <form onSubmit={onSearch} className='bg-[#E0FBFC] text-[#253237] rounded-lg px-6 py-4 mt-8 flex flex-col md:flex-row max-md:items-start gap-4 max-md:mx-auto'>
 
