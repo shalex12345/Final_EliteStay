@@ -47,7 +47,8 @@ const Navbar = () => {
     return (
 
 
-        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 lg:px-20 xl:px-28 transition-all duration-300 z-50 ${isScrolled ? "bg-white/80 shadow-sm text-gray-700 backdrop-blur-md py-2.5" : "py-5"}`}>
+
 
             {/* Logo */}
             <Link to='/'>
@@ -57,9 +58,12 @@ const Navbar = () => {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">
                 {navLinks.map((link, i) => (
-                    <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+                    <a
+                        key={i}
+                        href={link.path}
+                        className={`transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${isScrolled ? "text-gray-700" : "text-white"}`}
+                    >
                         {link.name}
-                        <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </a>
                 ))}
                 {user && (
@@ -75,7 +79,8 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-4 group">
                 <img
                     src={assets.searchIcon}
-                    className={`h-7 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 ${isScrolled ? 'invert' : ''}`}
+                    className={`h-6 transition-transform duration-300 transform hover:scale-110 hover:rotate-6 ${isScrolled ? 'invert' : ''}`}
+
                 />
                 {user ?
                     (<UserButton>
@@ -85,8 +90,8 @@ const Navbar = () => {
                     </UserButton>)
                     :
                     (<button onClick={openSignIn}
-                        className="bg-[#253237] text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500
-                       hover:bg-[#C2DFE3] hover:text-[#253237] hover:scale-105 hover:shadow-lg hover:cursor-pointer"
+                        className="bg-[#253237] text-white px-6 py-2 rounded-md ml-4 transition duration-300 hover:scale-105 hover:shadow-md"
+
                     >
                         Login
                     </button>)
