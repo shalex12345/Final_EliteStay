@@ -16,10 +16,13 @@ connectDB()
 connectCloudinary()
 
 const app = express()
-app.use(cors()) //Enable Cross-Origin Sharing
-
+// app.use(cors()) //Enable Cross-Origin Sharing
+app.use(cors({
+    origin: 'https://final-elite-stay-kqv7.vercel.app',
+    credentials: true
+}));
 // API to listen to Stripe Webhooks
-app.post('/api/stripe', express.raw({type:"application/json"}), stripeWebhooks)
+app.post('/api/stripe', express.raw({ type: "application/json" }), stripeWebhooks)
 
 // Middleware
 app.use(express.json())
